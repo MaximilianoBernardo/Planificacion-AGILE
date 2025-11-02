@@ -5,7 +5,7 @@
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Título del proyecto} 
+\titulo{Analisis de asistencia a consultas odontológicas y predicción de ausencia de pacientes a los turnos} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 %\posgrado{Carrera de Especialización en Sistemas Embebidos} 
@@ -16,21 +16,21 @@
 
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
 % IMPORTANTE: no omitir titulaciones ni tildación en los nombres, también se recomienda escribir los nombres completos (tal cual los tienen en su documento)
-\autor{Título y Nombre del autor}
+\autor{Ing. Maximiliano Jose Bernardo}
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Título y Nombre del director}
+\director{Me comunique con un profesor del postgrado, estoy esprando su respuesta}
 \pertenenciaDirector{pertenencia} 
 \codirector{} % para que aparezca en la portada se debe descomentar la opción codirector en los parámetros de documentclass
 \pertenenciaCoDirector{FIUBA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{Nombre del cliente}
-\empresaCliente{Empresa del cliente}
+\cliente{Micaela Flores}
+\empresaCliente{Mundo Dental}
  
-\fechaINICIO{30 de abril de 2023}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlan{18 de junio de 2023} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{15 de mayo de 2024}	%Fecha de defensa pública del trabajo final
+\fechaINICIO{21 de octubre de 2025}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlan{9 de diciembre de 2025} 	%Fecha de final de cursada de GdP
+\fechaFINALTrabajo{9 de diciembre de 2025}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -85,7 +85,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en \textcolor{red}{la implementación de un prototipo de un sistema de control de temperatura de una caldera industrial}. El trabajo tendrá un presupuesto preliminar estimado de \textcolor{red}{600} horas y un costo estimado de \textcolor{red}{\$ XXX}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un sistema de predicción de asistencia de pacientes. El trabajo tendrá un presupuesto preliminar estimado de 600 horas y un costo estimado de \$ 20000000, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -106,52 +106,24 @@ Se adjunta a esta acta la planificación inicial.
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-El objetivo es que el lector, en una o dos páginas, exponga de qué se trata el proyecto y cuáles son sus desafíos, cuál es la motivación para realizarlo y su importancia.
+Este proyecto es un emprendimiento personal que tiene como cliente a la empresa Mundo Dental, un consultorio odontológico ubicado en San Martín. El objetivo surgió tras dialogar con la jefa del consultorio, Micaela Flores. Durante estas conversaciones, identificamos el problema de las ausencias de los pacientes a los turnos odontológicos. Estas ausencias generan dificultades en la gestión del tiempo y en la facturación del consultorio, ya que se han registrado casos en los que faltan varios o incluso la mayoría de los pacientes en un determinado día, lo que provoca que una jornada laboral resulte improductiva. A partir de estas observaciones, planteamos la hipótesis inicial de que la cantidad de pacientes que se ausentan a los turnos es lo suficientemente significativa como para que, a largo plazo, el consultorio pueda enfrentar serias dificultades económicas.
 
-Se debe introducir el contexto del proyecto, el estado del arte en la temática, describir la propuesta de valor, cuál es el problema que atiende y cuál es la solución que se propone. Se debe dar una descripción funcional de la solución que incluya un diagrama en bloques.
+En función del problema presentado por el cliente, procederemos a recopilar información de los turnos registrados durante el último año. Con estos datos realizaremos un análisis de la asistencia y de la ausencia de los pacientes, con el fin de determinar el volumen de ausencias presente en el conjunto de datos recopilado. Este análisis inicial nos permitirá evaluar la hipótesis planteada al comienzo. Una vez resuelta la incertidumbre respecto al volumen de ausencias, utilizaremos la información obtenida para desarrollar un modelo de machine learning tradicional, cuyo objetivo será predecir la probabilidad de ausencia de un paciente. Además, implementaremos un chatbot de WhatsApp que gestionará y asignará los turnos, y que realizará su seguimiento de forma automática. El propósito de esta herramienta será optimizar el uso de los turnos disponibles por día.
 
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
+Este proyecto es valorado por el cliente, ya que le permitirá tomar decisiones informadas sobre el futuro de la empresa. Según los resultados obtenidos a partir de la hipótesis inicial, definiremos qué acciones se deberán tomar, determinando si el negocio es viable en su estado actual, si requiere ajustes en su gestión o si resulta inviable con el grupo de clientes actual de la zona. Por otro lado, el chatbot permitirá al cliente administrar de manera más simple los turnos asignados, lo que le brindará más tiempo para realizar otras tareas administrativas. Finalmente, el modelo de predicción de ausencias posibilitará al sector administrativo analizar la factibilidad de sobreasignar turnos en días o momentos específicos.
 
-\begin{itemize}
-	\item ¿Cuál es el contexto del proyecto, es un emprendimiento personal, un proyecto para una empresa, es parte del programa de vinculación con empresas del posgrado?
-	\item ¿Existen o aplican condiciones especiales al proyecto, financiamiento de algún programa público o privado, acuerdos de confidencialidad, acuerdos sobre la propiedad intelectual de los entregables u otros?
-	\item ¿Cómo se compara la solución propuesta con el estado del arte en el campo de aplicación? ¿En qué aspectos destaca?
-	\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-	\item ¿En qué estado del ciclo de vida está la solución que se propone?
-	\item ¿Cuáles son las características del cliente (el adoptante de los entregables del proyecto) qué valora, qué necesita?
-	\item ¿Por dónde pasa la innovación?
-\end{itemize}
-
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y descripción funcional de la solución propuesta.
-
-Las figuras se deben mencionar en el texto ANTES de que aparezcan con una frase como la siguiente: ``En la figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''.  La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
+En la figura \ref{fig:diagrama} se presenta el diagrama en bloques del sistema
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.65\textwidth]{./Figuras/diagBloques.png}
+\includegraphics[width=.65\textwidth]{./Figuras/diagrama.png}
 \caption{Diagrama en bloques del sistema.}
-\label{fig:diagBloques}
+\label{fig:diagrama}
 \end{figure}
 
-\vspace{25px}
-
-El tamaño del texto en TODAS las figuras debe ser adecuado \textbf{para que NO pase lo que ocurre en la figura \ref{fig:diagBloques}}, donde el lector debe esforzarse para poder leer el texto. 
-
-Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama. Se recomienda evitar colores primarios (como rojo, verde o cyan) y usar la gama de colores pastel.
-
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
-
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-\textbf{Nota importante:} borrar esto y todas las consignas en color rojo antes de entregar este documento). Esto se hace eliminando el par de comandos que forman el bloque consigna, \verb!\begin{consigna}{red}! y \verb!\end{consigna}{red}! del código. 
- 
-Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos. Si se considera que una persona cumple dos o más roles, entonces \textbf{solo dejarla en el rol más importante}. 
-
-Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente. Si una persona es el Responsable, \textbf{no debe ser colocado también como miembro del equipo}.
-
 
 \begin{table}[ht]
 %\caption{Identificación de los interesados}
@@ -159,91 +131,89 @@ Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla
 \begin{tabularx}{\linewidth}{@{}|l|X|X|l|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0} 
-Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &                   &              	&        	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
-Impulsor      &                   &              	&        	\\ \hline
-Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &                   &              	&        	\\ \hline
-Orientador    & \supname	      & \pertesupname 	& Director del Trabajo Final \\ \hline
-Equipo        & miembro1 \newline 
-				miembro2          &              	&        	\\ \hline
-Opositores    &                   &              	&        	\\ \hline
-Usuario final &                   &              	&        	\\ \hline
+Rol           & Nombre y Apellido  & Organización 	& Puesto 	\\ \hline
+Auspiciante   &        -           &         -     	&     -   	\\ \hline
+Cliente       & \clientename       &\empclientename	&     -  	\\ \hline
+Impulsor      &        -           &        -      	&     -   	\\ \hline
+Responsable   & \authorname        & FIUBA        	& Alumno 	\\ \hline
+Colaboradores &         -          &        -      	&     -   	\\ \hline
+Orientador    & \supname	       & \pertesupname 	& Director del Trabajo Final \\ \hline
+Equipo        &          -         &        -      	&      -  	\\ \hline
+Opositores    &          -         &       -      	&      -  	\\ \hline
+Usuario final &         -         &       -     	&      -  	\\ \hline
 \end{tabularx}
 \end{table}
 
-El Director suele ser uno de los orientadores.
 
-No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
-
-No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
-
-Es deseable listar a continuación las principales características de cada interesado.
- 
-Por ejemplo:
 \begin{itemize}
-	\item Orientador: la Dra. Ing. María Gómez es experta en la temática y va a ayudar con la definición de los requerimientos y el desarrollo del firmware del embebido.
-	\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-	\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
+    \item Cliente: {\clientename} es la dueña del consultorio y será la clienta final que use el sistema desarrollado.
+    \item Responsable: {\authorname}   es el encargado de llevar adelante el proyecto y velar por los objetivos del mismo.
+    \item Orientador: {\supname} es el referente de la arquitectura que se implementará para el proyecto.
 \end{itemize}
 
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
+
 
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
+El proyecto tiene como objetivo desarrollar un modelo predictivo capaz de estimar la probabilidad de asistencia de los pacientes a sus turnos odontológicos, complementado con un agente de inteligencia artificial que funcione como chatbot para la gestión automática de los turnos. Este asistente permitirá interactuar con los pacientes mediante recordatorios y consultas sencillas sobre su asistencia, integrando sus respuestas en el modelo para mejorar la precisión de las predicciones. Con ello se busca optimizar la planificación de la agenda odontológica, reducir el impacto de las inasistencias y proporcionar a los usuarios finales una herramienta práctica, accesible y confiable para la gestión de turnos.
 
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
-
-Se recomienda que sea solo un párrafo que continúe con la idea de la frase ``el propósito de este proyecto es...'' (omitir la frase, ya que está en el título de la sección).
-\end{consigna}
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
+El alcance de este proyecto comprende el desarrollo de un sistema capaz de predecir la asistencia de los pacientes a sus turnos odontológicos y gestionar la interacción con ellos mediante un asistente virtual o \textit{chatbot}. En particular, se incluyen los siguientes elementos:
 
-Se refiere al trabajo que se va a hacer para entregar el producto o resultado especificado. 
+\begin{enumerate}
+    \item Recopilación y unificación de los registros históricos de turnos odontológicos de los pacientes, idealmente cubriendo al menos el último año de actividad.
+    \item Limpieza y estructuración de los datos para asegurar consistencia y confiabilidad en el análisis posterior.
+    \item Análisis exploratorio de los datos, incluyendo patrones de asistencia y ausencia por día de la semana, distribución mensual y detección de tendencias relevantes.
+    \item Desarrollo de un modelo predictivo que estime la probabilidad de asistencia de cada paciente, utilizando algoritmos como \textit{Random Forest}, \textit{Regresión Logística} o \textit{Support Vector Machines} (\textit{SVM}).
+    \item Integración de un agente de inteligencia artificial (\textit{IA}) que permita a los pacientes reservar turnos, recibir recordatorios y responder consultas sobre su asistencia mediante plataformas de mensajería (por ejemplo, \textit{WhatsApp} o \textit{Telegram}).
+    \item Integración de la información recopilada por el \textit{chatbot} en el modelo predictivo, para mejorar la precisión de las predicciones en tiempo real.
+    \item Implementación de una interfaz para el usuario final, que permita ingresar los datos de un turno y recibir la predicción correspondiente.
+\end{enumerate}
 
-Explicitar todo lo quede comprendido dentro del alcance del proyecto. Por ejemplo:
+El presente proyecto \textbf{no incluye}:
 
-El proyecto incluye:
 \begin{itemize}
-	\item Ítem 1.
-	\item Ítem 2.
-		\begin{itemize}
-		\item Subítem 1.
-		\item Subítem 2.
-		\item ...
-		\end{itemize}
-	\item ...
-	
+    \item La digitalización de registros previos que no se encuentren disponibles en archivos electrónicos legibles.
+    \item La gestión administrativa completa del consultorio más allá de la interacción automatizada con los pacientes y la predicción de asistencia.
+    \item La integración con sistemas externos distintos a los servicios de mensajería especificados (\textit{WhatsApp}, \textit{Telegram}) o la conexión con otras plataformas de gestión.
+    \item Mantenimiento, soporte o actualización continua del sistema luego de su entrega inicial.
 \end{itemize}
-
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
-
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
 
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
 
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-``Para el desarrollo del presente proyecto se supone que: ...''
+Para el desarrollo del presente proyecto se supone que:
 
-\begin{itemize}
-	\item Supuesto 1.
-	\item Supuesto 2.
-	\item ...
-\end{itemize}
+\begin{enumerate}
+    \item El consultorio odontológico \textit{Mundo Dental} cuenta con un registro histórico suficiente de turnos de pacientes, abarcando al menos un año de actividad, y que dichos datos se encuentran disponibles en formato digital legible.
+    
+    \item Los registros históricos contienen información suficiente y relevante para el análisis, incluyendo datos como fecha del turno, identificación del paciente, y estado de asistencia o ausencia.
+    
+    \item El personal del consultorio colaborará en la provisión de la información necesaria y en la validación de los resultados obtenidos durante las distintas etapas del proyecto.
+    
+    \item El desarrollo y procesamiento de los datos se realizarán en un entorno controlado, con los recursos computacionales necesarios para ejecutar los algoritmos de análisis y predicción.
+    
+    \item Los modelos predictivos a implementar —como \textit{Random Forest}, \textit{Regresión Logística} y \textit{SVM} — serán adecuados para el volumen y tipo de datos disponibles.
+    
+    \item Las plataformas de mensajería seleccionadas (\textit{WhatsApp} o \textit{Telegram}) disponen de interfaces o \textit{API} accesibles para permitir la integración con el asistente virtual o \textit{chatbot}.
+    
+    \item El \textit{chatbot} desarrollado será capaz de interactuar con los pacientes de manera autónoma para confirmar o cancelar turnos, y de registrar las respuestas de los usuarios de forma estructurada para su posterior análisis.
+    
+    \item Se dispone de conectividad estable a internet tanto en el entorno del consultorio como en el servidor donde se alojará la aplicación.
+    
+    \item El cliente final, representado por {\clientename}, jefa del consultorio, participará activamente en la validación funcional del sistema y en las pruebas de aceptación.
+    
+    \item Los datos utilizados para el desarrollo y prueba del modelo se mantendrán bajo estricta confidencialidad, respetando las normas de protección de datos personales.
+    
+    \item El sistema final será implementado en un entorno de \textit{hosting} que soporte la ejecución del modelo predictivo y la operación continua del \textit{chatbot}.
+\end{enumerate}
 
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
-
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
 
 \section{6. Product Backlog}
 \label{sec:backlog}
